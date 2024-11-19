@@ -94,7 +94,7 @@ productChildrenFootballClothing.forEach((product, index) => {
 });
 detailProductClubFootballClothing.forEach((product, index) => {
   detailClothesMap.clubFootballClothing
-    .push(`<article data-type = "clubFootballClothing}" data-id = "${index}">
+    .push(`<article data-type = "clubFootballClothing" data-id = "${index}">
             <div class = "managerDetailClothes">
     <header class = "managerImgDetailClothes">
       <a href="#"><img src="${product.anh1}" alt="Hình ảnh giao diện"></a>
@@ -216,8 +216,8 @@ for (let product in menuListClothesProductMap) {
     );
   }
 }
-console.log(menuListClothesProductMap);
-console.log(detailClothesMap);
+// console.log(menuListClothesProductMap);
+// console.log(detailClothesMap);
 const amountClothesPerPage = 8;
 const clothesPerPageMap = [];
 let pageClothes = 1;
@@ -378,6 +378,8 @@ navClothes.addEventListener("click", function (e) {
     addButtonPageClothes();
     noneListShoesProduct.style.display = "none";
     noneDetailProductShoes.style.display = "none";
+    noneListBrandProduct.style.display = "none";
+    noneDetailProductBrand.style.display = "none";
     imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
     specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
     productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
@@ -451,6 +453,8 @@ document.querySelectorAll(".clothes2 li a").forEach((element) => {
         addButtonPageClothes();
         noneListShoesProduct.style.display = "none";
         noneDetailProductShoes.style.display = "none";
+        noneListBrandProduct.style.display = "none";
+        noneDetailProductBrand.style.display = "none";
         imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
         specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
         productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
@@ -473,6 +477,8 @@ document.querySelectorAll(".clothes2 li a").forEach((element) => {
         updateListProductClothes(getDataTypeClothes);
         noneListShoesProduct.style.display = "none";
         noneDetailProductShoes.style.display = "none";
+        noneListBrandProduct.style.display = "none";
+        noneDetailProductBrand.style.display = "none";
         imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
         specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
         productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
@@ -515,6 +521,8 @@ managerListTypeClothes.forEach((element) => {
         removeButtonPageClothes();
         noneListShoesProduct.style.display = "none";
         noneDetailProductShoes.style.display = "none";
+        noneListBrandProduct.style.display = "none";
+        noneDetailProductBrand.style.display = "none";
         updateListProductClothes(getAttributeManagerListTypeClothes);
       }
     }
@@ -677,6 +685,7 @@ function updateDetailClothes(
     });
   }
 }
+// -------------- Tất cả sản phẩm quần áo tại trang chủ ------------
 const allProductClothesHome = document.querySelector(".allProductClothesHome");
 // console.log(allProductClothesHome);
 allProductClothesHome.addEventListener("click", function (event) {
@@ -688,8 +697,11 @@ allProductClothesHome.addEventListener("click", function (event) {
   if (getAttributeAllProductClothesHome) {
     updatePageProductClothes(getAttributeAllProductClothesHome);
     addButtonPageClothes();
+    window.scrollTo({ top: 0, behavior: "auto" });
     noneListShoesProduct.style.display = "none";
     noneDetailProductShoes.style.display = "none";
+    noneListBrandProduct.style.display = "none";
+    noneDetailProductBrand.style.display = "none";
     imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
     specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
     productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
@@ -708,6 +720,37 @@ allProductClothesHome.addEventListener("click", function (event) {
     });
   }
 });
+// -------------- Sản phẩm quần áo trưng bày trang chủ --------------
+function getRandomClothes(arr, n) {
+  if (n > arr.length) {
+    return;
+  }
+
+  // Tạo bản sao của mảng và xáo trộn
+  const productClothesHome = arr.slice(); // Copy mảng để không làm thay đổi mảng gốc
+  for (let i = productClothesHome.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1)); // Vị trí ngẫu nhiên
+    [productClothesHome[i], productClothesHome[randomIndex]] = [
+      productClothesHome[randomIndex],
+      productClothesHome[i],
+    ]; // Hoán đổi
+  }
+
+  // Trả về n phần tử đầu tiên
+  return productClothesHome.slice(0, n);
+}
+const productClothesHomeMap = getRandomClothes(
+  menuListClothesProductMap.allClothes,
+  9
+);
+console.log(productClothesHomeMap);
+const productClothesDisplayHome2 = document.querySelector(
+  ".productClothesDisplayHome"
+);
+productClothesDisplayHome2.innerHTML += productClothesHomeMap.join("");
+const listProductClothesDisplayHome = document.querySelectorAll(
+  ".productClothesDisplayHome article"
+);
 function updateDetailClothesDisplayHome(
   getAttributeElementProductClothesDisplayHome,
   getIDElementProductClothesDisplayHome
@@ -739,9 +782,6 @@ function updateDetailClothesDisplayHome(
     });
   }
 }
-const listProductClothesDisplayHome = document.querySelectorAll(
-  ".productClothesDisplayHome article"
-);
 // console.log(listProductClothesDisplayHome);
 listProductClothesDisplayHome.forEach((element) => {
   element.addEventListener("click", function (event) {
@@ -766,6 +806,8 @@ listProductClothesDisplayHome.forEach((element) => {
       );
       noneListShoesProduct.style.display = "none";
       noneDetailProductShoes.style.display = "none";
+      noneListBrandProduct.style.display = "none";
+      noneDetailProductBrand.style.display = "none";
       imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
       specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
       productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ

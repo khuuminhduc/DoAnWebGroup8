@@ -275,11 +275,17 @@ a {
 .managerImgSpecialProduct img:last-child {
   display: none;
 }
+.managerContentSpecialProduct {
+  display: inline-block;
+  width: 280px;
+}
 .managerContentSpecialProduct p {
   font-size: 20px;
 }
 .managerContentSpecialProduct p:first-child {
   margin-top: 10px;
+  overflow-wrap: break-word;
+  height: 40px;
 }
 .managerContentSpecialProduct p:last-child {
   margin-top: 5px;

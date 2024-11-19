@@ -687,8 +687,8 @@ for (let product in menuListShoesProductMap) {
     menuListShoesProductMap.all.push(...menuListShoesProductMap[product]);
   }
 }
-console.log(menuListShoesProductMap);
-console.log(detailShoesMap);
+// console.log(menuListShoesProductMap);
+// console.log(detailShoesMap);
 // -------------- Truy cập vào các phần tử HTML DOM -------------
 const noneListClothesProduct = document.querySelector(".listClothesProduct");
 const noneDetailProductClothes = document.querySelector(
@@ -886,6 +886,8 @@ navShoes.addEventListener("click", function (e) {
     addButtonPage();
     noneListClothesProduct.style.display = "none";
     noneDetailProductClothes.style.display = "none";
+    noneListBrandProduct.style.display = "none";
+    noneDetailProductBrand.style.display = "none";
     imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
     specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
     productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
@@ -924,6 +926,8 @@ document.querySelectorAll(".shoes2 li a").forEach((element) => {
         window.scrollTo({ top: 0, behavior: "auto" });
         noneListClothesProduct.style.display = "none";
         noneDetailProductClothes.style.display = "none";
+        noneListBrandProduct.style.display = "none";
+        noneDetailProductBrand.style.display = "none";
         imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
         specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
         productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
@@ -947,6 +951,8 @@ document.querySelectorAll(".shoes2 li a").forEach((element) => {
         window.scrollTo({ top: 0, behavior: "auto" });
         noneListClothesProduct.style.display = "none";
         noneDetailProductClothes.style.display = "none";
+        noneListBrandProduct.style.display = "none";
+        noneDetailProductBrand.style.display = "none";
         imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
         specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
         productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
@@ -987,6 +993,8 @@ managerListTypeShoes.forEach((element) => {
         removeButtonPage();
         noneListClothesProduct.style.display = "none";
         noneDetailProductClothes.style.display = "none";
+        noneListBrandProduct.style.display = "none";
+        noneDetailProductBrand.style.display = "none";
         updateListProductShoes(getAttributeManagerListTypeShoes);
         window.scrollTo({ top: 0, behavior: "auto" });
       }
@@ -1136,6 +1144,7 @@ function updateDetailShoes(getDataTypeProduct, getDataIdProduct) {
     });
   }
 }
+// -------------- Truy cập tất cả phần tử từ trang chủ
 const allProductShoesHome = document.querySelector(".allProductShoesHome");
 // console.log(allProductShoesHome);
 allProductShoesHome.addEventListener("click", function (event) {
@@ -1151,6 +1160,8 @@ allProductShoesHome.addEventListener("click", function (event) {
     window.scrollTo({ top: 0, behavior: "auto" });
     noneListClothesProduct.style.display = "none";
     noneDetailProductClothes.style.display = "none";
+    noneListBrandProduct.style.display = "none";
+    noneDetailProductBrand.style.display = "none";
     imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
     specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
     productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
@@ -1170,6 +1181,32 @@ allProductShoesHome.addEventListener("click", function (event) {
     });
   }
 });
+
+// --------------- Chi tiết sản phẩm trưng bày trang chủ ------------
+function getRandomShoes(arr, n) {
+  if (n > arr.length) {
+    return;
+  }
+
+  // Tạo bản sao của mảng và xáo trộn
+  const productShoesHome = arr.slice(); // Copy mảng để không làm thay đổi mảng gốc
+  for (let i = productShoesHome.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1)); // Vị trí ngẫu nhiên
+    [productShoesHome[i], productShoesHome[randomIndex]] = [
+      productShoesHome[randomIndex],
+      productShoesHome[i],
+    ]; // Hoán đổi
+  }
+
+  // Trả về n phần tử đầu tiên
+  return productShoesHome.slice(0, n);
+}
+const productShoesHomeMap = getRandomShoes(menuListShoesProductMap.all, 9);
+// console.log(productShoesHomeMap);
+productShoesDisplayHome.innerHTML += productShoesHomeMap.join("");
+const listProductShoesDisplayHome = document.querySelectorAll(
+  ".productShoesDisplayHome article"
+);
 function updateDetailShoesDisplayHome(
   getAttributeElementProductShoesDisplayHome,
   getIDElementProductShoesDisplayHome
@@ -1201,9 +1238,6 @@ function updateDetailShoesDisplayHome(
     });
   }
 }
-const listProductShoesDisplayHome = document.querySelectorAll(
-  ".productShoesDisplayHome article"
-);
 // console.log(listProductShoesDisplayHome);
 listProductShoesDisplayHome.forEach((element) => {
   element.addEventListener("click", function (event) {
@@ -1228,6 +1262,8 @@ listProductShoesDisplayHome.forEach((element) => {
       );
       noneListClothesProduct.style.display = "none";
       noneDetailProductClothes.style.display = "none";
+      noneListBrandProduct.style.display = "none";
+      noneDetailProductBrand.style.display = "none";
       imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
       specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
       productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
