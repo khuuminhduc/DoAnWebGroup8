@@ -1,0 +1,23 @@
+.header > li {
+  list-style: none;
+}
+.header > li > a {
+  text-decoration: none;
+  color: black;
+}
+.content-product li > a {
+  color: black;
+  text-decoration: none;
+}
+.content-product div > li {
+  list-style: none;
+}
+#all-product {
+  display: none;
+}
+#all-product div {
+  cursor: pointer;
+}
+.show-product div {
+  cursor: pointer;
+}
