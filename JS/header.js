@@ -55,16 +55,59 @@ const contentMap = {
        </div>
      </div>
    </div>`,
+  login: `<div id="login">
+        <form id="contain" onsubmit="login()">
+            <h2>ĐĂNG NHẬP</h2>
+            <input type="text" id="user" placeholder="Tên đăng nhâp">
+            <input type="password" id="password" placeholder="Mật khẩu">
+            <div id="signin">
+                <span>Quên mật khẩu</span>
+                <span>
+                    <a href="/Bai tap/Login-logout/signin.html" id="link">Đăng ký</a>
+                </span>
+            </div>
+            <div>
+                <button type="submit" id="P">Đăng nhập</button>
+            </div>
+        </form>
+    </div>
+    <img class = "imgLogin" src="/DoAnWebGroup8/img_admin/anhtrangchu.jpg" id="i">`,
+  register: `<div id="login">
+        <form id="contain" onsubmit="signin()">
+            <h2>ĐĂNG NHẬP</h2>
+            <input type="text" id="username" placeholder="Tên tài khoản">
+            <input type="text" id="user1" placeholder="Tên đăng nhâp">
+            <div id="ps">
+                <input type="password" id="password1" placeholder="Mật khẩu">
+                <input type="password" id="password_again" placeholder="Nhập lại mật khẩu">
+            </div>
+            <input type="tel" id="telephone" placeholder="Số điện thoại">
+            <div>
+                <button type="submit" id="K">Đăng ký</button>
+            </div>
+        </form>
+    </div>
+    <img class = "imgLogin" src="/DoAnWebGroup8/img_admin/anhtrangchu.jpg">`,
 };
+const contentNavigation = document.querySelector(".content-navigation");
 function updateContent(contentKey) {
   const contentDiv = document.getElementById("content"); // Truy cập tới phần chứa nội dung cần điều hướng tới
   const mainImage = document.querySelector(".br-main"); // Truy cập phần ảnh trang chủ
   const productSpecial = document.querySelector(".special"); // Truy cập phần sản phẩm nổi bật
   if (contentMap[contentKey]) {
+    contentNavigation.style.display = "block";
     // Kiểm tra xem nội dung có bên trong mảng chứa nội dung cần điều hướng tới hay không
     contentDiv.innerHTML = contentMap[contentKey]; // Ghi đè nội dung phù hợp khi click vào
+    window.scrollTo({ top: 0, behavior: "auto" });
     mainImage.style.display = "none"; // Ẩn ảnh trang chủ
     productSpecial.style.display = "none"; // Ẩn phần sản phẩm nổi bật
+    productDisplayHome.style.display = "none"; // Ẩn đi sản phẩm trưng bày trang chủ
+    noneListClothesProduct.style.display = "none";
+    noneDetailProductClothes.style.display = "none";
+    noneListBrandProduct.style.display = "none";
+    noneDetailProductBrand.style.display = "none";
+    noneListShoesProduct.style.display = "none";
+    noneDetailProductShoes.style.display = "none";
   }
 }
 

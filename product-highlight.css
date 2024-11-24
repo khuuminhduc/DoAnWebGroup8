@@ -17,6 +17,10 @@
 .productClothesDisplayHome article:not(:first-child) {
   margin-left: 55px;
 }
+.productShoesDisplayHome article:first-child,
+.productClothesDisplayHome article:first-child {
+  margin-left: 10px;
+}
 .navProductClothesHome {
   margin-top: 30px;
 }
@@ -60,10 +64,12 @@
 .productShoesHome {
   font-size: 30px;
   margin-left: 80px;
+  color: aliceblue;
 }
 .productClothesHome {
   font-size: 29px;
   margin-left: 80px;
+  color: aliceblue;
 }
 .allProductShoesHome,
 .allProductClothesHome {
@@ -71,6 +77,7 @@
   margin-left: auto;
   margin-right: 80px;
   opacity: 0.8;
+  color: aliceblue;
 }
 .allProductShoesHome:hover,
 .allProductClothesHome:hover {

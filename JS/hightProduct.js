@@ -174,6 +174,7 @@ function updateDetailSpecialProduct(
       specialProduct.style.display = "block"; // Hiện các sản phẩm nổi bật
       productDisplayHome.style.display = "block"; // Hiện lại danh sách sản phẩm trưng bày trang chủ
       detailProductShoes.style.display = "none"; // Ẩn đi danh sách sản phẩm
+      contentNavigation.style.display = "none";
       buttonBackHome.innerHTML = ""; // Xóa đi nút button trên HTML mỗi khi click vào lại sẽ kh bị trùng lặp
       window.scrollTo({ top: 660, behavior: "auto" });
     });
@@ -196,6 +197,7 @@ articles.forEach((e) => {
       noneListClothesProduct.style.display = "none";
       noneDetailProductClothes.style.display = "none";
       noneListBrandProduct.style.display = "none";
+      contentNavigation.style.display = "none";
       noneDetailProductBrand.style.display = "none";
       imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
       specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật

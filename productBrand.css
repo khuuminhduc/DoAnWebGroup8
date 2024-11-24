@@ -31,6 +31,7 @@
 .managerListTypeBrand a {
   font-size: 25px;
   margin-top: 5px;
+  color: aliceblue;
 }
 .managerImgBrand {
   position: relative;
@@ -52,6 +53,7 @@
   font-size: 20px;
   display: inline-block;
   width: 280px;
+  color: aliceblue;
 }
 .managerContentBrand p:first-child {
   overflow-wrap: break-word;

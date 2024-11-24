@@ -4,6 +4,7 @@
 .otherTypeShoes article {
   margin: 10px 0px 10px 40px;
   display: inline-block;
+  /* background-color: bisque; */
 }
 .listShoesProduct {
   /* border: 1px solid black; */
@@ -31,6 +32,7 @@
 .managerListTypeShoes a {
   font-size: 25px;
   margin-top: 5px;
+  color: aliceblue;
 }
 .managerImgShoes {
   position: relative;
@@ -52,6 +54,7 @@
   font-size: 20px;
   display: inline-block;
   width: 280px;
+  color: aliceblue;
 }
 .managerContentShoes p:first-child {
   overflow-wrap: break-word;

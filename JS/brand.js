@@ -609,6 +609,7 @@ function addButtonPageBrand() {
   });
 }
 function removeButtonPageBrand() {
+  pageBrand = 1;
   beforePageBrand.forEach((button) => {
     button.removeEventListener("click", eventBeforePageBrand);
   });
@@ -695,6 +696,7 @@ navBrand.addEventListener("click", function (e) {
     noneDetailProductShoes.style.display = "none";
     noneListClothesProduct.style.display = "none";
     noneDetailProductClothes.style.display = "none";
+    contentNavigation.style.display = "none";
     imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
     specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
     productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
@@ -726,55 +728,30 @@ document.querySelectorAll(".brand2 li a").forEach((element) => {
     if (getDataTypeBrand) {
       brandPerPageMap.length = 0;
       otherTypeBrand.innerHTML = "";
-      if (getDataTypeBrand === "allBrand") {
-        updatePageProductBrand(getDataTypeBrand);
-        addButtonPageBrand();
-        noneListShoesProduct.style.display = "none";
-        noneDetailProductShoes.style.display = "none";
-        noneListClothesProduct.style.display = "none";
-        noneDetailProductClothes.style.display = "none";
-        imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
-        specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
-        productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
-        listBrandProduct.style.display = "block"; // Hiển thị danh sách sản phẩm
-        listBrandProduct.prepend(buttonBackHome); // Thêm button vào đầu ListShoesProduct
-        buttonBackHome.innerHTML =
-          '<i class="fa-solid fa-arrow-left-long"></i>'; // Font awesome back arrow left
-        buttonBackListProductBrand.innerHTML = "";
-        buttonBackHome.addEventListener("click", function (event) {
-          // Thêm sự kiện click
-          event.preventDefault(); // Ngăn chặn hành vi mặc định
-          imgHome.style.display = "block"; // Hiện ảnh nền trang chủ
-          specialProduct.style.display = "block"; // Hiện các sản phẩm nổi bật
-          productDisplayHome.style.display = "block"; // Hiện lại danh sách sản phẩm trưng bày trang chủ
-          listBrandProduct.style.display = "none"; // Ẩn đi danh sách sản phẩm
-          buttonBackHome.innerHTML = ""; // Xóa đi nút button trên HTML mỗi khi click vào lại sẽ kh bị trùng lặp
-        });
-      } else {
-        removeButtonPageBrand();
-        updateListProductBrand(getDataTypeBrand);
-        noneListShoesProduct.style.display = "none";
-        noneDetailProductShoes.style.display = "none";
-        noneListClothesProduct.style.display = "none";
-        noneDetailProductClothes.style.display = "none";
-        imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
-        specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
-        productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
-        listBrandProduct.style.display = "block"; // Hiển thị danh sách sản phẩm
-        listBrandProduct.prepend(buttonBackHome); // Thêm button vào đầu ListShoesProduct
-        buttonBackHome.innerHTML =
-          '<i class="fa-solid fa-arrow-left-long"></i>'; // Font awesome back arrow left
-        buttonBackListProductBrand.innerHTML = "";
-        buttonBackHome.addEventListener("click", function (event) {
-          // Thêm sự kiện click
-          event.preventDefault(); // Ngăn chặn hành vi mặc định
-          imgHome.style.display = "block"; // Hiện ảnh nền trang chủ
-          specialProduct.style.display = "block"; // Hiện các sản phẩm nổi bật
-          productDisplayHome.style.display = "block"; // Hiện lại danh sách sản phẩm trưng bày trang chủ
-          listBrandProduct.style.display = "none"; // Ẩn đi danh sách sản phẩm
-          buttonBackHome.innerHTML = ""; // Xóa đi nút button trên HTML mỗi khi click vào lại sẽ kh bị trùng lặp
-        });
-      }
+      removeButtonPageBrand();
+      updatePageProductBrand(getDataTypeBrand);
+      addButtonPageBrand();
+      noneListShoesProduct.style.display = "none";
+      noneDetailProductShoes.style.display = "none";
+      noneListClothesProduct.style.display = "none";
+      noneDetailProductClothes.style.display = "none";
+      contentNavigation.style.display = "none";
+      imgHome.style.display = "none"; // Ẩn ảnh nền trang chủ
+      specialProduct.style.display = "none"; // Ẩn các sản phẩm nổi bật
+      productDisplayHome.style.display = "none"; // Ẩn đi phần sản phẩm trưng bày trang chủ
+      listBrandProduct.style.display = "block"; // Hiển thị danh sách sản phẩm
+      listBrandProduct.prepend(buttonBackHome); // Thêm button vào đầu ListShoesProduct
+      buttonBackHome.innerHTML = '<i class="fa-solid fa-arrow-left-long"></i>'; // Font awesome back arrow left
+      buttonBackListProductBrand.innerHTML = "";
+      buttonBackHome.addEventListener("click", function (event) {
+        // Thêm sự kiện click
+        event.preventDefault(); // Ngăn chặn hành vi mặc định
+        imgHome.style.display = "block"; // Hiện ảnh nền trang chủ
+        specialProduct.style.display = "block"; // Hiện các sản phẩm nổi bật
+        productDisplayHome.style.display = "block"; // Hiện lại danh sách sản phẩm trưng bày trang chủ
+        listBrandProduct.style.display = "none"; // Ẩn đi danh sách sản phẩm
+        buttonBackHome.innerHTML = ""; // Xóa đi nút button trên HTML mỗi khi click vào lại sẽ kh bị trùng lặp
+      });
     }
   });
 });
@@ -789,19 +766,14 @@ managerListTypeBrand.forEach((element) => {
     if (getAttributeManagerListTypeBrand) {
       brandPerPageMap.length = 0;
       otherTypeBrand.innerHTML = "";
-      if (getAttributeManagerListTypeBrand === "allBrand") {
-        updatePageProductBrand(getAttributeManagerListTypeBrand);
-        addButtonPageBrand();
-        // noneListShoesProduct.style.display = "none";
-        // noneDetailProductShoes.style.display = "none";
-      } else {
-        removeButtonPageBrand();
-        noneListShoesProduct.style.display = "none";
-        noneDetailProductShoes.style.display = "none";
-        noneListClothesProduct.style.display = "none";
-        noneDetailProductClothes.style.display = "none";
-        updateListProductBrand(getAttributeManagerListTypeBrand);
-      }
+      removeButtonPageBrand();
+      updatePageProductBrand(getAttributeManagerListTypeBrand);
+      addButtonPageBrand();
+      noneListShoesProduct.style.display = "none";
+      noneDetailProductShoes.style.display = "none";
+      noneListClothesProduct.style.display = "none";
+      noneDetailProductClothes.style.display = "none";
+      contentNavigation.style.display = "none";
     }
   });
 });

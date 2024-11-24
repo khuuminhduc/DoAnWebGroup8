@@ -28,8 +28,9 @@
   height: 115px;
 }
 .managerContentDetailClothes {
-  margin-top: 40px;
+  /* margin-top: 40px; */
   margin-left: 80px;
+  color: aliceblue;
 }
 .managerContentDetailClothes p:first-child {
   font-size: 50px;

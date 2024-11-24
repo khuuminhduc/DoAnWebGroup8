@@ -28,6 +28,7 @@
 .managerListTypeClothes a {
   font-size: 25px;
   margin-top: 5px;
+  color: aliceblue;
 }
 .managerImgClothes {
   position: relative;
@@ -49,6 +50,7 @@
   font-size: 20px;
   display: inline-block;
   width: 280px;
+  color: aliceblue;
 }
 .managerContentClothes p:first-child {
   margin-top: 5px;

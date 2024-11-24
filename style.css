@@ -6,6 +6,17 @@ html {
   margin: 0;
   padding: 0;
 }
+body {
+  background: rgb(170, 183, 161);
+  background: linear-gradient(
+    54deg,
+    rgba(170, 183, 161, 1) 0%,
+    rgba(71, 91, 57, 1) 15%,
+    rgba(17, 34, 5, 1) 50%,
+    rgba(71, 91, 57, 1) 85%,
+    rgba(170, 183, 161, 1) 100%
+  );
+}
 /* Code chung toan bo chuong trinh */
 li {
   list-style: none;
@@ -91,7 +102,7 @@ a {
   font-size: 20px;
   position: relative;
 }
-.sr {
+#sr {
   width: 230px;
   height: 30px;
   border: none;
@@ -103,6 +114,7 @@ a {
   font-size: 15px;
   right: 220px;
   top: 6px;
+  z-index: 4;
 }
 .user,
 .shopping {
@@ -257,6 +269,7 @@ a {
 .tieude {
   text-align: center;
   font-size: 30px;
+  color: antiquewhite;
   /* margin-top: 25px; */
 }
 .imgSpecialProduct {
@@ -264,6 +277,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   margin-left: 10px;
+  /* box-shadow: inset 0 5px 5px 3px rgba(0, 0, 0, 0.1); */
 }
 .specialProduct {
   margin-left: 40px;
@@ -278,6 +292,7 @@ a {
 .managerContentSpecialProduct {
   display: inline-block;
   width: 280px;
+  color: aliceblue;
 }
 .managerContentSpecialProduct p {
   font-size: 20px;
@@ -296,17 +311,12 @@ article:nth-child(5),
 article:nth-child(6) {
   margin-left: 80px;
 }
-.imgSpecialProduct article:nth-child(4),
-article:nth-child(5),
-article:nth-child(6) {
-  margin-top: 20px;
-}
 /* Hinh anh sale off */
 .first4 {
   margin-left: auto;
   margin-top: 10px;
   width: 330px;
-  height: 730px;
+  height: 760px;
   border: 1px solid black;
 }
 /* footer */

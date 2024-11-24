@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="support-customer.css">
     <link rel="stylesheet" href="invoice.css">
     <link rel="stylesheet" href="product-highlight.css">
-    <link rel="stylesheet" href="show-detail-product.css">
-    <link rel="stylesheet" href="list-product-shoes.css">
     <link rel="stylesheet" href="productShoes.css">
     <link rel="stylesheet" href="showDetailShoes.css">
     <link rel="stylesheet" href="productClothes.css">
@@ -26,7 +24,7 @@
     <title>Store-Sporty</title>
   </head>
   <body>
-      <header class = "header-web">
+    <header class = "header-web">
         <div class = "header-fixed">
           <div class="login login--fixed">
             <li class="login1">
@@ -45,7 +43,7 @@
           </div>
           <div class="nav">
             <li class="tc">
-              <a href="#">TRANG CHỦ</a>
+              <a href="?">TRANG CHỦ</a>
             </li>
             <li class="shoes">
               <a href="#" data-type="all" class = "navShoes"> GIÀY BÓNG ĐÁ </i></a>
@@ -92,11 +90,12 @@
             </li>
           </div>
           <div class="search">
-            <input type="text" placeholder="Tìm kiếm sản phẩm" class="sr" /><i
+            <input type="text" placeholder="Tìm kiếm sản phẩm" id="sr" /><i
               class="fa-solid fa-magnifying-glass"
             ></i>
           </div>
-          <div class="user"><i class="fa-solid fa-user"></i></div>
+          <div class="user"><i class="fa-solid fa-user"></i>
+          </div>
           <div class="shopping"><i class="fa-solid fa-cart-shopping"></i></div>
         </main>
         </div>
@@ -112,7 +111,7 @@
           <p class="content4">By Group 8 form SGU-Web1</p>
         </div>
       </main>
-      </header>
+    </header>
     <main class="special">
       <div class="first">
         <div class="first2">
@@ -219,8 +218,8 @@
         <a href="#" class = "allProductShoesHome" data-type="all">Xem tất cả <i class="fa-solid fa-angle-right"></i></a>
       </nav>
       <main class = "productShoesDisplayHome" id = "productShoesDisplayHome">
-        <button type = "button" class = "buttonLeft"><i class="fa-solid fa-angles-left"></i></button>
-        <button type="button" class = "buttonRight"><i class="fa-solid fa-angles-right"></i></button>
+        <button type = "button" class = "buttonLeft" style="color:azure"><i class="fa-solid fa-angles-left"></i></button>
+        <button type="button" class = "buttonRight" style="color:azure"><i class="fa-solid fa-angles-right"></i></button>
       </main>
       <!-- Clothes --> 
       <nav class = "navProductClothesHome">
@@ -228,8 +227,8 @@
         <a href="#" class = "allProductClothesHome" data-type="allClothes">Xem tất cả <i class="fa-solid fa-angle-right"></i></a>
       </nav>
       <main class = "productClothesDisplayHome">
-        <button type="button" class = "buttonLeftClothes"><i class="fa-solid fa-angles-left"></i></button>
-        <button type="button" class = "buttonRightClothes"><i class="fa-solid fa-angles-right"></i></button>
+        <button type="button" class = "buttonLeftClothes" style="color:azure"><i class="fa-solid fa-angles-left"></i></button>
+        <button type="button" class = "buttonRightClothes" style="color:azure"><i class="fa-solid fa-angles-right"></i></button>
       </main>
     </main>
     <!-- Hoa don thanh toan -->
@@ -397,15 +396,15 @@
         </div>
         <div class = "logo-contact">
             <div class = "logo1"><a href=""></a>
-                <img src="https://www.pngkit.com/png/full/22-220966_phone-icon-png-red-icon-in-thoi-png.png" alt=""
+                <img src="/DoAnWebGroup8/img_admin/22-220966_phone-icon-png-red-icon-in-thoi-png.png" alt=""
                 
                 >
             </a></div>
             <div class = "logo2"><a href=""></a>
-                <img src="https://giaiphapzalo.com/wp-content/uploads/2021/10/logo-transperant.png" alt="" ">
+                <img src="/DoAnWebGroup8/img_admin/logo-transperant.png" alt="" >
             </a></div>
             <div class = "logo3"><a href=""></a>
-                <img src="https://static.vecteezy.com/system/resources/previews/016/716/477/non_2x/messenger-icon-free-png.png" alt="" >
+                <img src="/DoAnWebGroup8/img_admin/messenger-icon-free-png.webp" alt="" >
             </a></div>
     </footer>
     <script src = "/DoAnWebGroup8/JS/header.js"></script>
@@ -414,6 +413,7 @@
     <script src = "/DoAnWebGroup8/JS/brand.js"></script>
     <script src = "/DoAnWebGroup8/JS/buttonHome.js"></script>
     <script src = "/DoAnWebGroup8/JS/hightProduct.js"></script>
-    <script></script>
+    <script src = "/DoAnWebGroup8/JS/search.js"></script>
+    <script src = "/DoAnWebGroup8/JS/login-signin.js"></script>
   </body>
 </html>

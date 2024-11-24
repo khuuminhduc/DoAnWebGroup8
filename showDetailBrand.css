@@ -28,8 +28,9 @@
   height: 115px;
 }
 .managerContentDetailBrand {
-  margin-top: 40px;
+  /* margin-top: 40px; */
   margin-left: 80px;
+  color: aliceblue;
 }
 .managerContentDetailBrand p:first-child {
   font-size: 50px;
