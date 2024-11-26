@@ -468,6 +468,11 @@ const detailShoesMap = {
   naturalGlassShoes: [],
   kidsShoes: [],
 };
+const menuProductSelectPrice = {
+  firstPrice: [],
+  secondPrice: [],
+  lastPrice: [],
+};
 const productArtificialGrassShoes = LCS_SP.filter(
   (productShoes) => productShoes.chiTietLoai === "Giày cỏ nhân tạo"
 );
@@ -501,12 +506,83 @@ productArtificialGrassShoes.forEach((product, index) => {
             <footer class = "footerContentShoes">
               <a href="#" class = "managerContentShoes">
                 <p>${product.ten}</p>
-                <p>${product.gia.toLocaleString("vi-VN")}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
               </a>
             </footer>
           </div>
         </article>`
   );
+  if (product.gia < 1000000) {
+    menuProductSelectPrice.firstPrice
+      .push(`<article class = "productShoes" id = "${
+      product.id
+    }" data-type="artificialGrassShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`);
+  }
+  if (product.gia >= 1000000 && product.gia < 2000000) {
+    menuProductSelectPrice.secondPrice
+      .push(`<article class = "productShoes" id = "${
+      product.id
+    }" data-type="artificialGrassShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`);
+  }
+  if (product.gia >= 2000000) {
+    menuProductSelectPrice.lastPrice
+      .push(`<article class = "productShoes" id = "${
+      product.id
+    }" data-type="artificialGrassShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`);
+  }
 });
 productNaturalGlassShoes.forEach((product, index) => {
   menuListShoesProductMap.naturalGlassShoes.push(
@@ -523,12 +599,83 @@ productNaturalGlassShoes.forEach((product, index) => {
             <footer class = "footerContentShoes">
               <a href="#" class = "managerContentShoes">
                 <p>${product.ten}</p>
-                <p>${product.gia.toLocaleString("vi-VN")}</p>
+                <p data-price = "${product.gia}>${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
               </a>
             </footer>
           </div>
         </article>`
   );
+  if (product.gia < 1000000) {
+    menuProductSelectPrice.firstPrice
+      .push(`<article class = "productShoes" id = "${
+      product.id
+    }" data-type="naturalGlassShoe" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}>${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`);
+  }
+  if (product.gia >= 1000000 && product.gia < 2000000) {
+    menuProductSelectPrice.secondPrice
+      .push(`<article class = "productShoes" id = "${
+      product.id
+    }" data-type="naturalGlassShoe" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}>${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`);
+  }
+  if (product.gia >= 2000000) {
+    menuProductSelectPrice.lastPrice
+      .push(`<article class = "productShoes" id = "${
+      product.id
+    }" data-type="naturalGlassShoe" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}>${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`);
+  }
 });
 productKidsShoes.forEach((product, index) => {
   menuListShoesProductMap.kidsShoes.push(
@@ -545,12 +692,83 @@ productKidsShoes.forEach((product, index) => {
             <footer class = "footerContentShoes">
               <a href="#" class = "managerContentShoes">
                 <p>${product.ten}</p>
-                <p>${product.gia.toLocaleString("vi-VN")}</p>
+                <p data-price = "${product.gia}>${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
               </a>
             </footer>
           </div>
         </article>`
   );
+  if (product.gia < 1000000) {
+    menuProductSelectPrice.firstPrice
+      .push(`<article class = "productShoes" id = "${
+      product.id
+    }" data-type="kidsShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}>${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`);
+  }
+  if (product.gia >= 1000000 && product.gia < 2000000) {
+    menuProductSelectPrice.secondPrice
+      .push(`<article class = "productShoes" id = "${
+      product.id
+    }" data-type="kidsShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}>${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`);
+  }
+  if (product.gia >= 2000000) {
+    menuProductSelectPrice.lastPrice
+      .push(`<article class = "productShoes" id = "${
+      product.id
+    }" data-type="kidsShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}>${product.gia.toLocaleString(
+      "vi-VN"
+    )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`);
+  }
 });
 detailProductArtificialGrassShoes.forEach((product, index) => {
   detailShoesMap.artificialGrassShoes.push(
@@ -681,12 +899,14 @@ detailProductKidsShoes.forEach((product, index) => {
         </article>`
   );
 });
+
 // Code gộp tất cả các sản phẩm vào all và hiển thị trên mục tất cả sản phẩm
 for (let product in menuListShoesProductMap) {
   if (product != "all") {
     menuListShoesProductMap.all.push(...menuListShoesProductMap[product]);
   }
 }
+// console.log(menuProductSelectPrice);
 // console.log(menuListShoesProductMap);
 // console.log(detailShoesMap);
 // -------------- Truy cập vào các phần tử HTML DOM -------------
@@ -720,7 +940,7 @@ Object.assign(buttonBackHome.style, {
   marginLeft: "40px",
   fontSize: "35px",
   width: "70px",
-  backgroundColor: "white",
+  background: "rgb(170, 183, 161)",
   border: "none",
   cursor: "pointer",
 });
@@ -738,6 +958,56 @@ Object.assign(buttonBackListProductShoes.style, {
 const amountProductPerPage = 8;
 const productPerPageMap = [];
 let page = 1;
+function clickProduct() {
+  const articles = otherTypeShoes.querySelectorAll("article");
+  showDetailProduct.style.display = "none";
+  // Thêm CSS cho từng article
+  articles.forEach((article) => {
+    article.style.display = "inline-block";
+    article.style.margin = "20px 0px 10px 59px";
+  });
+  articles.forEach((element) => {
+    // Truy cập đến các sản phẩm có trong mục tất cả sản phẩm
+    element.addEventListener("click", function (event) {
+      // Tạo sự kiện click chọn sản phẩm
+      // console.log("Successful");
+      event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ
+      const getDataTypeProduct = event.currentTarget.getAttribute("data-type"); // Lấy ra data-type của sản phẩm khi click chọn
+      const getDataIdProduct = event.currentTarget.getAttribute("data-id"); // Lấy ra data-id của sản phẩm khi click chọn
+      if (getDataTypeProduct && getDataIdProduct) {
+        // Kiểm tra nó kh trả về null
+        updateDetailShoes(getDataTypeProduct, getDataIdProduct); // Update nội dung chi tiết sản phẩm tương ứng
+        const bigImgDetailShoes = document.querySelector(
+          ".managerImgDetailShoes a:first-child img "
+        ); // Truy cập vào phần tử ảnh lớn trong chi tiết sản phẩm
+        const smallImgDetailShoes = document.querySelectorAll(
+          ".managerImgDetailShoes a:last-child img "
+        ); // Truy cập đến các ảnh nhỏ trong chi tiết sản phẩm
+        let localImg = 0; // Cho biết vị trí ảnh nhỏ khi click ảnh
+        // Sẽ cập nhật localImg thành vị trí của ảnh nhỏ vừa được nhấp,  luôn theo dõi ảnh hiện tại đang hiển thị
+        // localImg sẽ cho ta luôn biết ảnh nào đang hiển thị ở ảnh lớn
+        smallImgDetailShoes.forEach(function (imgSmall, local) {
+          // Duyệt qua tất cả các ảnh nhỏ imgSmall
+          imgSmall.addEventListener("click", function (event) {
+            // Thêm sự kiện click cho từng ảnh nhỏ
+            event.preventDefault(); // Ngăn chặn hành vi mặc định
+            // console.log("Successful");
+            bigImgDetailShoes.src = imgSmall.src; // Thay đổi ảnh lớn là những ảnh nhỏ khi click chọn
+            localImg = local; // Cật nhật vị trí của ảnh nhỏ khi click chọn
+          });
+        });
+        bigImgDetailShoes.addEventListener("click", function (event) {
+          // Thêm sự kiện cho ảnh lớn
+          event.preventDefault(); // Ngăn chặn hành vi mặc định
+          // console.log("Successful");
+          localImg = (localImg + 1) % smallImgDetailShoes.length; // Khi click chọn ảnh lớn, chỉ số của localImg sẽ thay đổi + 1
+          // Sử dụng (localImg + 1) % smallImgDetailShoes.length để quay lại hình đầu tiên khi hết danh sách
+          bigImgDetailShoes.src = smallImgDetailShoes[localImg].src; // Cật nhật ảnh lớn khi là các ảnh nhỏ khi click lần lượt vào ảnh lớn
+        });
+      }
+    });
+  });
+}
 // -------------- Code điều hướng trên thanh công cụ trang chủ --------------
 const beforePage = document.querySelectorAll(".beforePage");
 const afterPage = document.querySelectorAll(".afterPage");
@@ -878,6 +1148,282 @@ function removeButtonPage() {
     button.removeEventListener("click", eventAfterPage);
   });
 }
+const selectPriceShoes = document.querySelector("#selectPrice");
+function selectPrice(e, getDataTypeShoes) {
+  e.preventDefault();
+  const contentSelect = e.target.value;
+  otherTypeShoes.innerHTML = "";
+  console.log(contentSelect);
+  if (getDataTypeShoes == "all") {
+    if (contentSelect === "firstPrice") {
+      otherTypeShoes.innerHTML = menuProductSelectPrice[contentSelect];
+      clickProduct();
+    }
+    if (contentSelect === "secondPrice") {
+      otherTypeShoes.innerHTML = menuProductSelectPrice[contentSelect];
+      clickProduct();
+    }
+    if (contentSelect === "lastPrice") {
+      otherTypeShoes.innerHTML = menuProductSelectPrice[contentSelect];
+      clickProduct();
+    }
+  }
+  if (getDataTypeShoes === "artificialGrassShoes") {
+    if (contentSelect === "firstPrice") {
+      productArtificialGrassShoes.forEach((product, index) => {
+        if (product.gia < 1000000) {
+          otherTypeShoes.innerHTML += `<article class = "productShoes" id = "${
+            product.id
+          }" data-type="artificialGrassShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+            "vi-VN"
+          )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`;
+        }
+      });
+      clickProduct();
+    }
+    if (contentSelect === "secondPrice") {
+      productArtificialGrassShoes.forEach((product, index) => {
+        if (product.gia >= 1000000 && product.gia < 2000000) {
+          otherTypeShoes.innerHTML += `<article class = "productShoes" id = "${
+            product.id
+          }" data-type="artificialGrassShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+            "vi-VN"
+          )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`;
+        }
+      });
+      clickProduct();
+    }
+    if (contentSelect === "lastPrice") {
+      productArtificialGrassShoes.forEach((product, index) => {
+        if (product.gia >= 2000000) {
+          otherTypeShoes.innerHTML += `<article class = "productShoes" id = "${
+            product.id
+          }" data-type="artificialGrassShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+            "vi-VN"
+          )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`;
+        }
+      });
+      clickProduct();
+    }
+  }
+  if (getDataTypeShoes === "naturalGlassShoes") {
+    if (contentSelect === "firstPrice") {
+      productNaturalGlassShoes.forEach((product, index) => {
+        if (product.gia < 1000000) {
+          otherTypeShoes.innerHTML += `<article class = "productShoes" id = "${
+            product.id
+          }" data-type="naturalGlassShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+            "vi-VN"
+          )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`;
+        }
+      });
+      clickProduct();
+    }
+    if (contentSelect === "secondPrice") {
+      productNaturalGlassShoes.forEach((product, index) => {
+        if (product.gia >= 1000000 && product.gia < 2000000) {
+          otherTypeShoes.innerHTML += `<article class = "productShoes" id = "${
+            product.id
+          }" data-type="naturalGlassShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+            "vi-VN"
+          )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`;
+        }
+      });
+      clickProduct();
+    }
+    if (contentSelect === "lastPrice") {
+      productNaturalGlassShoes.forEach((product, index) => {
+        if (product.gia >= 2000000) {
+          otherTypeShoes.innerHTML += `<article class = "productShoes" id = "${
+            product.id
+          }" data-type="naturalGlassShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+            "vi-VN"
+          )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`;
+        }
+      });
+      clickProduct();
+    }
+  }
+  if (getDataTypeShoes === "kidShoes") {
+    if (contentSelect === "firstPrice") {
+      productKidsShoes.forEach((product, index) => {
+        if (product.gia < 1000000) {
+          otherTypeShoes.innerHTML += `<article class = "productShoes" id = "${
+            product.id
+          }" data-type="kidShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+            "vi-VN"
+          )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`;
+        }
+      });
+      clickProduct();
+    }
+    if (contentSelect === "secondPrice") {
+      productKidsShoes.forEach((product, index) => {
+        if (product.gia >= 1000000 && product.gia < 2000000) {
+          otherTypeShoes.innerHTML += `<article class = "productShoes" id = "${
+            product.id
+          }" data-type="kidShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+            "vi-VN"
+          )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`;
+        }
+      });
+      clickProduct();
+    }
+    if (contentSelect === "lastPrice") {
+      productKidsShoes.forEach((product, index) => {
+        if (product.gia >= 2000000) {
+          otherTypeShoes.innerHTML += `<article class = "productShoes" id = "${
+            product.id
+          }" data-type="kidShoes" data-id = "${index}">
+          <div class = "managerProductShoes">
+            <header class = "headerImgShoes">
+              <a href="#" class = "managerImgShoes">
+                <img src="${product.anh1}" alt="Hình ảnh thứ 1">
+                <img src="${product.anh2}" alt="Hình ảnh thứ 2">
+              </a>
+            </header>
+            <footer class = "footerContentShoes">
+              <a href="#" class = "managerContentShoes">
+                <p>${product.ten}</p>
+                <p data-price = "${product.gia}">${product.gia.toLocaleString(
+            "vi-VN"
+          )}</p>
+              </a>
+            </footer>
+          </div>
+        </article>`;
+        }
+      });
+      clickProduct();
+    }
+  }
+}
+function addSelectPrice() {
+  selectPriceShoes.addEventListener("change", selectPrice);
+}
+function removeSelectPrice() {
+  selectPriceShoes.removeEventListener("change", selectPrice);
+}
 navShoes.addEventListener("click", function (e) {
   e.preventDefault();
   const getAttributeNavShoes = e.target.getAttribute("data-type");
@@ -885,6 +1431,7 @@ navShoes.addEventListener("click", function (e) {
   if (getAttributeNavShoes) {
     updatePageProductShoes(getAttributeNavShoes);
     addButtonPage();
+    addSelectPrice();
     noneListClothesProduct.style.display = "none";
     noneDetailProductClothes.style.display = "none";
     contentNavigation.style.display = "none";
@@ -908,7 +1455,6 @@ navShoes.addEventListener("click", function (e) {
     });
   }
 });
-
 // -------------- Code điều hướng các tác vụ trên nav trang chủ ----------------
 document.querySelectorAll(".shoes2 li a").forEach((element) => {
   // Duyệt các phần tử là các type của sản phẩm: Giày cỏ nhân tạo, giày cỏ tự nhiên, ...
@@ -1032,7 +1578,7 @@ function updateListProductShoes(getDataTypeProduct) {
 function updatePageProductShoes(getDataTypeProduct) {
   if (menuListShoesProductMap[getDataTypeProduct]) {
     const allProductPage = menuListShoesProductMap[getDataTypeProduct];
-    console.log(allProductPage);
+    // console.log(allProductPage);
     const sumPage = Math.ceil(allProductPage.length / amountProductPerPage);
     for (let i = 0; i < sumPage; i++) {
       const start = i * amountProductPerPage;
@@ -1040,7 +1586,7 @@ function updatePageProductShoes(getDataTypeProduct) {
       const productPerPage = allProductPage.slice(start, end);
       productPerPageMap.push(productPerPage);
     }
-    console.log(productPerPageMap);
+    // console.log(productPerPageMap);
     otherTypeShoes.innerHTML = productPerPageMap[page - 1];
     const articles = otherTypeShoes.querySelectorAll("article");
     showDetailProduct.style.display = "none";

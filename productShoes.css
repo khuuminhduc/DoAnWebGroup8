@@ -70,7 +70,16 @@
   margin-left: 40px;
   font-size: 35px;
   width: 70px;
-  background-color: white;
+  /* background-color: white; */
   border: none;
   cursor: pointer;
+}
+.managerButtonPage {
+  position: relative;
+}
+#selectPrice {
+  position: absolute;
+  right: 50px;
+  top: 5px;
+  font-size: 17px;
 }

@@ -10,7 +10,7 @@
 .managerDetailSpecial {
   display: flex;
   /* border: 1px solid black; */
-  margin: 0 45px;
+  margin: 10px 45px;
 }
 .managerImgDetailSpecial {
   display: flex;
